@@ -1,0 +1,55 @@
+// rules that extend the parent rule by inheritance will render all rules from parent
+// along with their own sets of rules.
+
+@import "mixins";
+
+// variables with operations
+$btn-bg: #006699;
+$btn-color: #fff;
+$btn-padding: 5px;
+$btn-hover: $btn-bg - .5;
+
+// panel styles
+.panel{
+  border: 3px solid dodgerblue;
+  background: lightgreen;
+  margin: 10px;
+}
+
+.sm-panel{
+  @extend .panel;
+  font-size: 12px;
+  padding: 5px;
+  width: 50%;
+}
+
+.odd-panel{
+  @extend .panel;
+  background: dodgerblue;
+  color: #fff;
+}
+
+
+// button styles
+.btn{
+  background: $btn-bg;
+  color: $btn-color;
+  padding: $btn-padding;
+  display: inline-block;
+  @include border-radius(8px);
+  text-decoration: none;
+}
+
+.btn:hover{
+  background: $btn-hover;
+}
+
+.big-btn{
+  @extend .btn;
+  padding: $btn-padding + 30;
+}
+
+.lite-btn{
+  @extend .btn;
+  background: $btn-bg * 1.5;
+}

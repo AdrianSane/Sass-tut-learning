@@ -1,0 +1,145 @@
+/*
+ - src: http://sass-lang.com/
+ - boston: https://www.youtube.com/watch?v=sCbXTrsl7NU
+ - Atom.io compiler: https://atom.io/packages/sass-autocompile
+
+--------------------------------------------------------------------------------
+ NOTES:
+--------------------------------------------------------------------------------
+ - current: https://www.youtube.com/watch?v=iSxMLOeatXg
+
+ - Sass uses the $ symbol to make something a variable
+ - Sass needs a compiler / translater in orderto work with it
+ - You need a compiler to run the converted files in the browser
+ - A compiler translates scss/sass to regular css for production
+
+
+--------------------------------------------------------------------------------
+NESTING:
+--------------------------------------------------------------------------------
+ - Nesting allows you to write css properties inside of other css propoerties.
+ - Nested styles only apply to an element inside of the parent element. nav > ul
+
+
+--------------------------------------------------------------------------------
+PARTIALS:
+--------------------------------------------------------------------------------
+ - partials are a way of including small snippets of css into sass files
+ - partials with code that will be used in another file, must use an underscore in the file name
+ - to include a partial in the main scss for output to css, use the @ symbol to import the files code
+
+
+--------------------------------------------------------------------------------
+EXTENDING / INHERTANCE:
+--------------------------------------------------------------------------------
+ - the extend keyword allows you to implement css inside of other css rules
+ - used for styling different variations of elements
+
+
+--------------------------------------------------------------------------------
+MIXINS / PARAMETERS:
+--------------------------------------------------------------------------------
+  - mixins and parameters are for reusing code over and over again
+  - mixins are included in code via the @mixin and @include keywords
+  - you can use mixins with values that are assigned to variables
+  - set the variables for the mixins in the mixin, then assign value to them when you call them
+  - this allows you to use custom code that you can set to multiple properties at once
+
+
+--------------------------------------------------------------------------------
+OPERATIONS:
+--------------------------------------------------------------------------------
+ - operations allow you to add a mathematical formula to a css rule
+*/
+.profile {
+		margin: 0 auto;
+		width: 800px;
+		height: 100%;
+}
+
+.profile img {
+		border-radius: 999px;
+		width: 200px;
+		height: 200px;
+		border: 1px solid #000;
+}
+
+.panel, .sm-panel, .odd-panel {
+		border: 3px solid dodgerblue;
+		background: lightgreen;
+		margin: 10px;
+}
+
+.sm-panel {
+		font-size: 12px;
+		padding: 5px;
+		width: 50%;
+}
+
+.odd-panel {
+		background: dodgerblue;
+		color: #fff;
+}
+
+.btn, .big-btn, .lite-btn {
+		background: #006699;
+		color: #fff;
+		padding: 5px;
+		display: inline-block;
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		-ms-border-radius: 8px;
+		border-radius: 8px;
+		text-decoration: none;
+}
+
+.btn:hover, .big-btn:hover, .lite-btn:hover {
+		background: #006699;
+}
+
+.big-btn {
+		padding: 35px;
+}
+
+.lite-btn {
+		background: #0099e6;
+}
+
+body {
+		font: 100% Helvetica, sans-serif;
+		color: #000;
+		width: 1200px;
+		margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5 {
+		color: tomato;
+}
+
+nav ul {
+		background: #6666dd;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-ms-border-radius: 10px;
+		border-radius: 10px;
+		/*using a mixin*/
+}
+
+nav ul li {
+		display: inline-block;
+}
+
+nav ul a {
+		color: #2ce350;
+		display: inline-block;
+		padding: 10px 16px;
+		text-decoration: none;
+}
+
+nav ul a:hover {
+		background-color: #16a085;
+		color: #663388;
+}

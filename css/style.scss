@@ -1,0 +1,108 @@
+/*
+ - src: http://sass-lang.com/
+ - boston: https://www.youtube.com/watch?v=sCbXTrsl7NU
+ - Atom.io compiler: https://atom.io/packages/sass-autocompile
+
+--------------------------------------------------------------------------------
+ NOTES:
+--------------------------------------------------------------------------------
+ - current: https://www.youtube.com/watch?v=iSxMLOeatXg
+
+ - Sass uses the $ symbol to make something a variable
+ - Sass needs a compiler / translater in orderto work with it
+ - You need a compiler to run the converted files in the browser
+ - A compiler translates scss/sass to regular css for production
+
+
+--------------------------------------------------------------------------------
+NESTING:
+--------------------------------------------------------------------------------
+ - Nesting allows you to write css properties inside of other css propoerties.
+ - Nested styles only apply to an element inside of the parent element. nav > ul
+
+
+--------------------------------------------------------------------------------
+PARTIALS:
+--------------------------------------------------------------------------------
+ - partials are a way of including small snippets of css into sass files
+ - partials with code that will be used in another file, must use an underscore in the file name
+ - to include a partial in the main scss for output to css, use the @ symbol to import the files code
+
+
+--------------------------------------------------------------------------------
+EXTENDING / INHERTANCE:
+--------------------------------------------------------------------------------
+ - the extend keyword allows you to implement css inside of other css rules
+ - used for styling different variations of elements
+
+
+--------------------------------------------------------------------------------
+MIXINS / PARAMETERS:
+--------------------------------------------------------------------------------
+  - mixins and parameters are for reusing code over and over again
+  - mixins are included in code via the @mixin and @include keywords
+  - you can use mixins with values that are assigned to variables
+  - set the variables for the mixins in the mixin, then assign value to them when you call them
+  - this allows you to use custom code that you can set to multiple properties at once
+
+
+--------------------------------------------------------------------------------
+OPERATIONS:
+--------------------------------------------------------------------------------
+ - operations allow you to add a mathematical formula to a css rule
+*/
+
+// VARIABLES
+$header-color: tomato;
+$font-stack: Helvetica, sans-serif;
+$primary-color: #000;
+$a-color: #2ce350;
+$a-hover-color: #663388;
+$hover-color: #16a085;
+$nav-bg-color: #6666dd;
+
+
+
+// PARTIALS
+@import "profile";
+@import "extends";
+@import "mixins";
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  width: 1200px;
+  margin: 0 auto;
+}
+h1, h2, h3, h4, h5{
+  color: $header-color;
+}
+
+
+// NESTING
+nav{
+
+  ul{
+    background: $nav-bg-color;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include border-radius(10px);/*using a mixin*/
+
+    li{
+      display: inline-block;
+    }
+
+    a{
+      color: $a-color;
+      display: inline-block;
+      padding: 10px 16px;
+      text-decoration: none;
+    }
+
+    a:hover{
+      background-color: $hover-color;
+      color: $a-hover-color;
+    }
+  }
+}
